@@ -119,14 +119,14 @@ public class PanelDeInicio extends javax.swing.JFrame {
                 .addGap(69, 69, 69)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jpPass, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btEntrar)
-                .addContainerGap(203, Short.MAX_VALUE))
+                .addContainerGap(199, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -160,7 +160,7 @@ public class PanelDeInicio extends javax.swing.JFrame {
         //try catch por si hay alfun error
         try {
             
-            
+            //Verifica que este lleno y si no mande un JOptionPane
              if(txtUsuario.getText().equals("")|| String.valueOf(jpPass.getPassword()).length() < 8){
                 JOptionPane.showMessageDialog(null, "<<Error hay espacios vacios>>");
             }

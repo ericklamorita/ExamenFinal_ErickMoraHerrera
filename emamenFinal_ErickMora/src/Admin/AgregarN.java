@@ -258,11 +258,11 @@ public class AgregarN extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         
-        try {  //try catch por si las dudas  
+        try {  //try catch por si ocurre error  
         
         //validar si esta vacio
-        if (txtNombre.getText().equals("") || txtedad.getText().equals("") || txtContraseña.getText().equals("") || txtUsuario.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "<<Error hay espacios vacios>>");
+        if (txtNombre.getText().equals("") || txtedad.getText().equals("") || txtContraseña.getText().equals("") || txtContraseña.getText().length()<8 || txtUsuario.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "<<Error hay espacios vacios o la contraseña es corta>>");
 
         } else {//guardar estuante 
             SubEstudiante estudiante = new SubEstudiante(String.valueOf(Carrera.getSelectedItem()), txtNombre.getText(), Integer.parseInt(txtedad.getText()), txtUsuario.getText(), txtContraseña.getText(), "Estudiante");
@@ -272,6 +272,8 @@ public class AgregarN extends javax.swing.JFrame {
             txtNombre.setText("");
             txtUsuario.setText("");
             txtedad.setText("");
+           JOptionPane.showMessageDialog(null, "<<Guardado Correctamente>>");
+
         }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "<<Error>>");
