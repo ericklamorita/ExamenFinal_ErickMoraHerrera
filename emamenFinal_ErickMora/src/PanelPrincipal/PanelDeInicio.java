@@ -159,7 +159,14 @@ public class PanelDeInicio extends javax.swing.JFrame {
     private void btEntrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btEntrarMouseClicked
         //try catch por si hay alfun error
         try {
-            for (SubEstudiante E : Datos.ListaEstudiantes) { // for mejorado para recorrer la lista de los estudiantes
+            
+            
+             if(txtUsuario.getText().equals("")|| String.valueOf(jpPass.getPassword()).length() < 8){
+                JOptionPane.showMessageDialog(null, "<<Error hay espacios vacios>>");
+            }
+            
+            for (SubEstudiante E : Datos.ListaEstudiantes) { // for mejorado para recorrer la lista de los estudiantes 
+            //para validar mayor o igual a 8 digitos
             if (txtUsuario.getText().equals(E.getUsuario()) && String.valueOf(jpPass.getPassword()).equals(E.getContraseña()) && String.valueOf(jpPass.getPassword()).length() >= 8) {
                 //para verificar que los primeros usuarios estan creador
                 JOptionPane.showMessageDialog(null, "<<Acceso correcto>>");
